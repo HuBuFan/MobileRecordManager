@@ -1,6 +1,19 @@
 # MobileRecordManager
 Android P 以下手机拨号录音功能
 
+``` 
+dependencies {
+        implementation 'com.github.HuBuFan:MobileRecordManager:v1.0.1'
+}
+
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+``` 
+
 使用方式：
 
 第一步：添加相关权限
