@@ -49,6 +49,16 @@ UrRecordManager.getInstance().init(getApplication());
        }
     });
 ```
+第五步：在页面销毁时关闭录音
+
+```
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    UrRecordManager.getInstance().stop();
+}
+
+```
 - 手动录音
 
 ```
