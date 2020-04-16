@@ -36,3 +36,27 @@ allprojects {
 </receiver>
 <service android:name="com.zlw.main.recorderlib.recorder.RecordService" />
 ``` 
+第三步：初始化
+``` 
+UrRecordManager.getInstance().init(getApplication());
+``` 
+第四步：录音结果监听
+``` 
+ UrRecordManager.getInstance().setResultListener(new UrRecordResultListener() {
+       @Override
+       public void onResult(File result) {
+          Log.d(TAG, "**********************录音文件为" + result.getAbsolutePath() + "**********************");
+       }
+    });
+```
+- 手动录音
+
+```
+UrRecordManager.getInstance().start();
+```
+
+- 关闭录音
+
+```
+UrRecordManager.getInstance().stop();
+```
