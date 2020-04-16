@@ -13,8 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.hubufan.mobile.record.MobileRecordManager;
-import com.hubufan.mobile.record.UrRecordResultListener;
+import com.hubufan.mobile.record_lib.UrRecordManager;
+import com.hubufan.mobile.record_lib.UrRecordResultListener;
 import com.hubufan.permission.UrPermissionHelper;
 import com.hubufan.permission.listener.UrPermissionListener;
 
@@ -22,6 +22,7 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "UrMobileManager";
     private Context mContext;
 
     @Override
@@ -29,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
-        MobileRecordManager.getInstance().init(getApplication());
-        MobileRecordManager.getInstance().setResultListener(new UrRecordResultListener() {
+        UrRecordManager.getInstance().init(getApplication());
+        UrRecordManager.getInstance().setResultListener(new UrRecordResultListener() {
             @Override
             public void onResult(File result) {
-                Log.d("MobileVoice", "**********************录音文件为" + result.getAbsolutePath() + "**********************");
+                Log.d(TAG, "**********************录音文件为" + result.getAbsolutePath() + "**********************");
             }
         });
     }
@@ -41,9 +42,10 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_start:
-
+                UrRecordManager.getInstance().start();
                 break;
             case R.id.btn_stop:
+                UrRecordManager.getInstance().stop();
                 break;
             case R.id.btn_phone:
                 UrPermissionHelper.getInstance().with(this)
@@ -56,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void requestPermissionsSuccess() {
-                                callPhone("18070280545");
-
+                                callPhone("10000");
                             }
 
                             @Override
@@ -67,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
                         }).requestPermissions();
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        UrRecordManager.getInstance().stop();
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.hubufan.mobile.record;
+package com.hubufan.mobile.record_lib;
 
 import org.junit.Test;
 

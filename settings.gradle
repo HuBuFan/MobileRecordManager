@@ -1,3 +1,3 @@
 rootProject.name='MobileRecordManager'
 include ':app'
-include ':recordlib'
+include ':record_lib'

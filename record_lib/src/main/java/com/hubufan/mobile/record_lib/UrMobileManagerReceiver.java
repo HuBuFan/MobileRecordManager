@@ -1,4 +1,4 @@
-package com.hubufan.mobile.record;
+package com.hubufan.mobile.record_lib;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -16,9 +16,9 @@ import com.zlw.main.recorderlib.RecordManager;
  * @email 1713397546@qq.com
  * @description
  */
-public class MobileManagerReceiver extends BroadcastReceiver {
+public class UrMobileManagerReceiver extends BroadcastReceiver {
 
-    private static final String TAG = MobileManagerReceiver.class.getSimpleName();
+    private static final String TAG = "UrMobileManager";
 
     @Override
     public void onReceive(Context context, Intent intent) {

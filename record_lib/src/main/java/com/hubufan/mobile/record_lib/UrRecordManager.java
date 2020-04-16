@@ -1,4 +1,4 @@
-package com.hubufan.mobile.record;
+package com.hubufan.mobile.record_lib;
 
 import android.app.Application;
 
@@ -15,19 +15,19 @@ import java.io.File;
  * @email 1713397546@qq.com
  * @description
  */
-public class MobileRecordManager {
+public class UrRecordManager {
 
-    private volatile static MobileRecordManager instance;
+    private volatile static UrRecordManager instance;
     private Application context;
 
-    private MobileRecordManager() {
+    private UrRecordManager() {
     }
 
-    public static MobileRecordManager getInstance() {
+    public static UrRecordManager getInstance() {
         if (instance == null) {
-            synchronized (MobileRecordManager.class) {
+            synchronized (UrRecordManager.class) {
                 if (instance == null) {
-                    instance = new MobileRecordManager();
+                    instance = new UrRecordManager();
                 }
             }
         }
@@ -46,6 +46,20 @@ public class MobileRecordManager {
                 resultListener.onResult(result);
             }
         });
+    }
+
+    /**
+     * 开始录音
+     */
+    public void start() {
+        RecordManager.getInstance().start();
+    }
+
+    /**
+     * 关闭录音
+     */
+    public void stop() {
+        RecordManager.getInstance().stop();
     }
 
 }

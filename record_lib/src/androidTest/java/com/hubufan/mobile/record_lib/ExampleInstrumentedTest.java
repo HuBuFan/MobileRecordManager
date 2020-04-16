@@ -1,4 +1,4 @@
-package com.hubufan.mobile.record;
+package com.hubufan.mobile.record_lib;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.hubufan.mobile.record.test", appContext.getPackageName());
+        assertEquals("com.hubufan.mobile.record_lib.test", appContext.getPackageName());
     }
 }
