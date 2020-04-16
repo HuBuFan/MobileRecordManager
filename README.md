@@ -1,5 +1,7 @@
 # MobileRecordManager
 Android P 以下手机拨号录音功能
+- 推荐个超级nice的权限请求
+https://github.com/HuBuFan/UrPermissionHelper
 
 ``` 
 dependencies {
