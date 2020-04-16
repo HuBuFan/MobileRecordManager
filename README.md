@@ -58,7 +58,7 @@ protected void onDestroy() {
     UrRecordManager.getInstance().stop();
 }
 ```
-##以上操作就可以时间手机拨号录音功能，如果有其他需要请结合 start()、stop()自己使用
+以上操作就可以时间手机拨号录音功能，如果有其他需要请结合 start()、stop()自己使用
 - 手动录音
 
 ```
