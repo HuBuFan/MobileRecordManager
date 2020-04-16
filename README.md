@@ -3,7 +3,7 @@ Android P 以下手机拨号录音功能
 
 ``` 
 dependencies {
-        implementation 'com.github.HuBuFan:MobileRecordManager:v1.0.1'
+        implementation 'com.github.HuBuFan:MobileRecordManager:latestVersion'
 }
 
 allprojects {
